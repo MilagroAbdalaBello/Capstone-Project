@@ -8,8 +8,9 @@ import numpy as np
 app = FastAPI(title="API Inteligencia Competitiva - 10 Rubros Testigo")
 
 # 1. Cargamos el modelo y la tabla de precios medios de referencia al iniciar
-modelo_detector = joblib.load("detector_anomalias_rubros.joblib")
-df_ref = pd.read_csv("referencia_10_rubros.csv")
+# Reemplazá las dos líneas anteriores por estas:
+modelo_detector = joblib.load("detector_anomalias_v2.joblib")
+df_ref = pd.read_csv("canasta_representativa_10_rubros_v2.csv")
 mapa_referencia = dict(zip(df_ref['tipo_producto'], df_ref['precio_mercado_medio']))
 
 # Palabras clave exactas usadas en Colab para clasificar los 10 rubros
